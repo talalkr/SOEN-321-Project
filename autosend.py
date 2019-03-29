@@ -16,11 +16,7 @@ subjects = ["", "Paypal Support - Subscription Renewal", "noreply", "Sign Up Tod
 #Content
 emptyMsg = ("")
 linkMsg = ("https://paypal-supportteam.myvnc.com/home/mostronix/248f4e93bcd0e09fb83f5641816dfa02OGJhM2I2OGM2NTBkYzZhNDVlZDFlMzYyNzJmZWI1YjE=/resolution/websc_login/?locale.x=en_")
-<<<<<<< HEAD
 attachMsg = "blahblah"
-=======
-attachMsg = ("") #Add Attachment!
->>>>>>> 63eee7c8ce87ae6f19c6b57a75bd71e499955397
 benignMsg = ("Prosperous impression had conviction. \n\n For every delay death ask style. Me mean able my by in they. Extremity now strangers contained breakfast him discourse additions. Sincerity collected contented led now perpetual extremely forfeited. Perhaps far exposed age effects. Now distrusts you her delivered applauded affection out sincerity. As tolerably recommend shameless unfeeling he objection consisted. She although cheerful perceive screened throwing met not eat distance. Viewing hastily or written dearest elderly up weather it as. So direction so sweetness or extremity at daughters. Provided put unpacked now bu bringing. She exposed painted fifteen are noisier mistake led waiting. Surprise not wandered speedily husbands although yet end. Are court tiled cease young built fat one man taken. We highest ye friends is exposed equally in. Ignorant had too strictly followed. Astonished as travelling assistance or unreserved oh pianoforte ye. Five with seen put need tore add neat. Bringing it is he returned received raptures. ")
 phishMsg = ("https://autenticapp.cf/cx/")
 #Creating Attachment
