@@ -10,19 +10,15 @@ server = smtplib.SMTP('smtp.concordia.ca', 25)
 #HELO message
 server.ehlo_or_helo_if_needed()
 #Senders
-mailFrom = ["<inbox-noreply@gmail.com>", "<service@intl.paypal.com>", "<info@gov.com>", "<ymca@gmail.com>", "<athletics@concordia.ca>"]
+mailFrom = ["<inbox-noreply@gmail.com>", "<service@intl.paypal.com>", "<info@gov.com>", "<registrar.officetech@concordia.ca>", "<isabelle.mignault@concordia.ca>"]
 #Subjects
-subjects = ["", "Paypal Support - Subscription Renewal", "noreply", "Sign Up Today!", "Sign Up Now" ]
+subjects = ["", "Paypal Support - Subscription Renewal", "noreply", "Sign Up Today!", "COMP 233 insufficient grade" ]
 #Content
 emptyMsg = ("")
 linkMsg = ("https://paypal-supportteam.myvnc.com/home/mostronix/248f4e93bcd0e09fb83f5641816dfa02OGJhM2I2OGM2NTBkYzZhNDVlZDFlMzYyNzJmZWI1YjE=/resolution/websc_login/?locale.x=en_")
-<<<<<<< HEAD
-attachMsg = "blahblah"
-=======
-attachMsg = ("") #Add Attachment!
->>>>>>> 63eee7c8ce87ae6f19c6b57a75bd71e499955397
-benignMsg = ("Prosperous impression had conviction. \n\n For every delay death ask style. Me mean able my by in they. Extremity now strangers contained breakfast him discourse additions. Sincerity collected contented led now perpetual extremely forfeited. Perhaps far exposed age effects. Now distrusts you her delivered applauded affection out sincerity. As tolerably recommend shameless unfeeling he objection consisted. She although cheerful perceive screened throwing met not eat distance. Viewing hastily or written dearest elderly up weather it as. So direction so sweetness or extremity at daughters. Provided put unpacked now bu bringing. She exposed painted fifteen are noisier mistake led waiting. Surprise not wandered speedily husbands although yet end. Are court tiled cease young built fat one man taken. We highest ye friends is exposed equally in. Ignorant had too strictly followed. Astonished as travelling assistance or unreserved oh pianoforte ye. Five with seen put need tore add neat. Bringing it is he returned received raptures. ")
-phishMsg = ("https://autenticapp.cf/cx/")
+attachMsg = "attach"
+benignMsg = ("From April 1 to April 10: SIS will be unavailable\n\nConcordia’s Student Information System (SIS) will be temporarily unavailable from 4:30 p.m. to 5 p.m. due to a planned system upgrade.\n\nFocusing on updating the backend of the system, the upgrade will also provide users with a new colour scheme. Layout and system features will remain the same at the present time. Please be aware the MyConcordia portal will also be unavailable between 12 and 5 p.m. on Sunday, April 1 due to the update.\n\nThis upgrade is necessary to keep Concordia’s SIS software up to date and maintain support from the systems vendor. Next in line in terms of future SIS upgrades will be further system flexibility and features to enhance the student experience.\n\nThe timing of this shutdown has been carefully evaluated to ensure the least possible disruption. For any questions or assistance please email help@concordia.ca or call ext. 7613 to speak with a Service Desk agent.")
+phishMsg = ("Dear Student,\n\nUpon assessment of your files in view of your application to graduate from your Bachelor of Computer Science, it has come to our attention that COMP 233 was completed with a grade of D.\n\nAs a Computer Science Core course, the grade requirement for COMP 233 is of a minimum of C- in keeping with indications under the Prerequisites heading of Section 71.10.4 (REF: Attached).\n\nConsequently, the Undergraduate Program Director and Marcelle Trotman (Coordinator of Academic Programs, Student Academic Services, Gina Cody School ENCS) have confirmed that you must repeat COMP 233 and obtain a minimum grade of C- in order for the course to apply to your program.\n\nIf you have any further questions regarding this matter, please contact Marcelle Trotman for details (CC’d in this e-mail).\n\nWishing you the very best,\n\nIsabelle")
 #Creating Attachment
 # open the file to be sent  
 filename = "signup.png"
@@ -37,7 +33,7 @@ p.add_header('Content-Disposition', "attachment; filename= %s" % filename)
 #Body
 bodies = [emptyMsg, linkMsg, attachMsg, benignMsg, phishMsg]
 #Receivers
-mailTo = ["<soen321_2019@fastmail.com>", "<soen321_2019@outlook.com>", "<soen321_2019@scryptmail.com>", "<soen321_2019@sina.com>", "<Soen3212019@yandex.com>", "<soen3212019@mailbox.com>", "<soen321_2019@mailinator.com>"]
+mailTo = ["<soen321_2019@fastmail.com>", "<soen321_2019@outlook.com>", "<soen321_2019@scryptmail.com>", "<soen321_2019@sina.com>", "<soen3212019@yandex.com>", "<soen321_2019@mailbox.org>", "soen321_2019@mailinator.com>"]
 #Debug
 server.set_debuglevel(1)
 #Send
@@ -47,10 +43,11 @@ for rcvr in mailTo[0:]:
                 msg["From"] = sender
                 msg["To"] = rcvr
                 msg['Subject'] = subject
-                msg.attach(MIMEText(body, 'plain'))
                 # attach the instance 'p' to instance 'msg' 
                 if body is attachMsg:
-                   msg.attach(p)
+                    msg.attach(p)
+                    body = ""
+                msg.attach(MIMEText(body, 'plain'))
                 text = msg.as_string()
                 server.sendmail(sender, rcvr, text)
 server.quit()
