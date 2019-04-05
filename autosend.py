@@ -12,7 +12,7 @@ server.ehlo_or_helo_if_needed()
 #Senders
 mailFrom = ["<inbox-noreply@gmail.com>", "<service@intl.paypal.com>", "<order-update@amazon.ca>", "<registrar.officetech@concordia.ca>", "<isabelle.mignault@concordia.ca>"]
 #Subjects
-subjects = ["", "Paypal Support - Subscription Renewal", "noreply", "Sign Up Today!", "COMP 233 insufficient grade" ]
+subjects = ["", "Paypal Support - Subscription Renewal", "noreply", "SIS Unavailability!", "COMP 233 insufficient grade" ]
 #Content
 emptyMsg = ("")
 linkMsg = ("https://paypal-supportteam.myvnc.com/home/mostronix/248f4e93bcd0e09fb83f5641816dfa02OGJhM2I2OGM2NTBkYzZhNDVlZDFlMzYyNzJmZWI1YjE=/resolution/websc_login/?locale.x=en_")
