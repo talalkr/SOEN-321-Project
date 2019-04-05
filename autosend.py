@@ -10,7 +10,7 @@ server = smtplib.SMTP('smtp.concordia.ca', 25)
 #HELO message
 server.ehlo_or_helo_if_needed()
 #Senders
-mailFrom = ["<inbox-noreply@gmail.com>", "<service@intl.paypal.com>", "<info@gov.com>", "<registrar.officetech@concordia.ca>", "<isabelle.mignault@concordia.ca>"]
+mailFrom = ["<inbox-noreply@gmail.com>", "<service@intl.paypal.com>", "<order-update@amazon.ca>", "<registrar.officetech@concordia.ca>", "<isabelle.mignault@concordia.ca>"]
 #Subjects
 subjects = ["", "Paypal Support - Subscription Renewal", "noreply", "Sign Up Today!", "COMP 233 insufficient grade" ]
 #Content
